@@ -9,10 +9,10 @@ dotenv_1.default.config();
 const app = (0, express_1.default)();
 const port = process.env.PORT || 5000;
 app.get("/", (req, res) => {
-    res.send("Express + TypeScript Server!");
+    res.send("Express + TypeScript Server!!");
 });
 app.get("/service1check", (req, res) => {
-    res.send('Service 1 is up');
+    res.json({ message: 'Service 1 is up' });
 });
 app.get("/service1port", (req, res) => {
     res.send(`${port}`);

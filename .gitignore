@@ -1,4 +1,8 @@
 /Service1/.env
 /Service2/.env
+
 /Service1/node_modules
 /Service2/node_modules
+
+/Client/client/node_modules
+/Client/client/.env.example
