@@ -7,20 +7,23 @@ const express_1 = __importDefault(require("express"));
 const dotenv_1 = __importDefault(require("dotenv"));
 dotenv_1.default.config();
 const app = (0, express_1.default)();
-const port = process.env.PORT || 7000;
+const port = process.env.PORT || 8000;
 const cors = require("cors");
-app.use(cors({
-    origin: "http://localhost:3000", // Allow Next.js frontend
-    methods: ["GET", "POST"], // Allowed request methods
-    allowedHeaders: ["Content-Type", "Authorization"], // Allowed headers
-}));
+// app.use(
+//   cors({
+//     origin: "http://localhost:3000", // Allow Next.js frontend
+//     methods: ["GET", "POST"], // Allowed request methods
+//     allowedHeaders: ["Content-Type", "Authorization"], // Allowed headers
+//   })
+// );
+app.use(cors({ origin: '*' }));
 app.get("/", (req, res) => {
     res.send("Express + TypeScript Server!!");
 });
-app.get("/service2check", (req, res) => {
-    res.json({ "message": "Service 2 is up" });
+app.get("/service3check", (req, res) => {
+    res.json({ "message": "Service 3 is up" });
 });
-app.get("/service2port", (req, res) => {
+app.get("/service3port", (req, res) => {
     res.send(`${port}`);
 });
 app.listen(port, () => {

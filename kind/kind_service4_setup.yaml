@@ -1,0 +1,13 @@
+kind: Cluster
+apiVersion: kind.x-k8s.io/v1alpha4
+nodes:
+  - role: control-plane
+    extraPortMappings:
+      - containerPort: 80   # Required for HTTP Ingress
+        hostPort: 80
+      - containerPort: 443  # Required for HTTPS (optional)
+        hostPort: 443
+
+
+
+  

@@ -5,7 +5,7 @@ import dotenv from "dotenv";
 dotenv.config();
 
 const app: Express = express();
-const port = process.env.PORT || 5000;
+const port = process.env.PORT || 8000;
 
 const cors = require("cors");
 // app.use(
@@ -22,11 +22,11 @@ app.get("/", (req: Request, res: Response) => {
   res.send("Express + TypeScript Server!!");
 });
 
-app.get("/service1check", (req: Request, res: Response) => {  
-  res.json({ "message": "Service 1 is up" });
+app.get("/service3check", (req: Request, res: Response) => {  
+  res.json({ "message": "Service 3 is up" });
 });
 
-app.get("/service1port", (req: Request, res: Response) => {
+app.get("/service3port", (req: Request, res: Response) => {
   res.send(`${port}`);
 });
 

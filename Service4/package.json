@@ -1,5 +1,5 @@
 {
-  "name": "service2",
+  "name": "service4",
   "version": "1.0.0",
   "main": "dist/index.js",
   "scripts": {
@@ -16,8 +16,9 @@
     "express": "^4.21.2"
   },
   "devDependencies": {
+    "@types/cors": "^2.8.17",
     "@types/express": "^5.0.0",
-    "@types/node": "^22.13.0",
+    "@types/node": "^22.13.1",
     "concurrently": "^9.1.2",
     "nodemon": "^3.1.9",
     "ts-node": "^10.9.2",

@@ -2,7 +2,6 @@
 
 
 import Image from "next/image";
-import React, { useEffect, useState } from 'react';
 
 import { Service1Text } from "@/ui/service1-test";
 import { Service2Text } from "@/ui/service2-test";

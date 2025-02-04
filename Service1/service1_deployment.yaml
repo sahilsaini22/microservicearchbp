@@ -29,7 +29,8 @@ spec:
   selector:
     app: service1
   ports:
-  - protocol: TCP
-    port: 5000         # Expose the Service on port 3000
-    targetPort: 5000   # Route traffic to the container's port
-  type: LoadBalancer
+    - protocol: TCP
+      port: 5000
+      targetPort: 5000
+      nodePort: 30001  # Exposes it on Kubernetes node at port 30001
+  type: NodePort

@@ -21,7 +21,7 @@ app.get("/", (req: Request, res: Response) => {
 });
 
 app.get("/service2check", (req: Request, res: Response) => {  
-  res.json({ "message": "Service 2 is up..." });
+  res.json({ "message": "Service 2 is up" });
 });
 
 app.get("/service2port", (req: Request, res: Response) => {

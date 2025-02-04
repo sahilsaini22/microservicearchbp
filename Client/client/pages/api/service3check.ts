@@ -3,7 +3,7 @@ import axios from "axios";
 
 export default async function handler(req: NextApiRequest, res: NextApiResponse) {
   try {
-    const response = await axios.get("http://192.168.65.3:30001/service1check");
+    const response = await axios.get("http://localhost:8000/service3check");
 
     console.log("API Response Data:", response.data); // Debugging
 
