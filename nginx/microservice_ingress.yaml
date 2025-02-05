@@ -1,0 +1,28 @@
+apiVersion: networking.k8s.io/v1
+kind: Ingress
+metadata:
+  name: service-ingress
+  annotations:
+    nginx.ingress.kubernetes.io/rewrite-target: /service4check  # Ensures correct path rewriting
+    nginx.ingress.kubernetes.io/ssl-redirect: "false"  # Disable HTTPS redirect (for local testing)
+    nginx.ingress.kubernetes.io/proxy-body-size: "50m"  # Allow larger request bodies if needed
+spec:
+  ingressClassName: nginx
+  rules:
+  - host: localhost  # Use "localhost" to match your setup
+    http:
+      paths:
+      - path: /service4
+        pathType: Prefix
+        backend:
+          service:
+            name: service4
+            port:
+              number: 80
+      - path: /service5
+        pathType: Prefix
+        backend:
+          service:
+            name: service5
+            port:
+              number: 80

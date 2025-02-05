@@ -1,0 +1,26 @@
+# kind-config.yaml
+kind: Cluster
+apiVersion: kind.x-k8s.io/v1alpha4
+name: mycluster
+nodes:
+  - role: control-plane
+    extraPortMappings:
+      - containerPort: 80    # Map Ingress HTTP port
+        hostPort: 80
+        protocol: TCP
+      - containerPort: 443   # Map Ingress HTTPS port
+        hostPort: 443
+        protocol: TCP
+      - containerPort: 8500
+        hostPort: 8500
+        protocol: TCP
+      - containerPort: 8600
+        hostPort: 8600
+        protocol: TCP
+  - role: worker
+  - role: worker
+
+
+
+
+
